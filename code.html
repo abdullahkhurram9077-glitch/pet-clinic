@@ -1,0 +1,553 @@
+<!DOCTYPE html><html lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}
+html { scroll-behavior: smooth; }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #eff4ff; }
+::-webkit-scrollbar-thumb { background: #00685f; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #005049; }
+.nav-link.active { color: #00685f !important; font-weight: 600; border-bottom: 2px solid #00685f; }
+.side-dot.active { background-color: #00685f !important; transform: scale(1.4); }
+</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-surface-variant":"#3d4947","surface-variant":"#d3e4fe","error":"#ba1a1a","secondary-fixed":"#d5e3fc","on-tertiary-container":"#fbfcff","inverse-surface":"#213145","surface":"#f8f9ff","tertiary-container":"#707579","background":"#f8f9ff","tertiary-fixed-dim":"#c3c7cb","tertiary-fixed":"#dfe3e7","surface-container-highest":"#d3e4fe","secondary-container":"#d5e3fc","on-background":"#0b1c30","primary":"#00685f","on-primary-fixed":"#00201d","primary-container":"#008378","on-secondary":"#ffffff","surface-container":"#e5eeff","primary-fixed":"#89f5e7","surface-container-low":"#eff4ff","on-secondary-container":"#57657a","on-primary-fixed-variant":"#005049","on-tertiary":"#ffffff","surface-bright":"#f8f9ff","on-tertiary-fixed":"#171c1f","surface-container-lowest":"#ffffff","tertiary":"#585d60","surface-dim":"#cbdbf5","inverse-primary":"#6bd8cb","inverse-on-surface":"#eaf1ff","on-primary":"#ffffff","secondary":"#515f74","error-container":"#ffdad6","surface-tint":"#006a61","on-error":"#ffffff","outline":"#6d7a77","on-tertiary-fixed-variant":"#43474b","on-secondary-fixed":"#0d1c2e","on-surface":"#0b1c30","primary-fixed-dim":"#6bd8cb","secondary-fixed-dim":"#b9c7df","outline-variant":"#bcc9c6","on-error-container":"#93000a","on-primary-container":"#f4fffc","on-secondary-fixed-variant":"#3a485b","surface-container-high":"#dce9ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-mobile":"16px","margin-desktop":"48px","container-max":"1200px","gutter":"24px","unit":"8px"},"fontFamily":{"headline-lg":["Inter"],"headline-xl":["Inter"],"headline-md":["Inter"],"headline-lg-mobile":["Inter"],"label-md":["Inter"],"body-md":["Inter"],"body-lg":["Inter"],"label-sm":["Inter"]},"fontSize":{"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"500"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}]}}}}</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></head><body class="bg-background font-body-md text-on-background">
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+<div class="h-20 max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop flex items-center justify-between">
+<div class="flex items-center gap-3">
+<a href="#hero" class="font-headline-md text-headline-md text-primary tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">pets</span>
+<span>Pet Clinic</span>
+</a>
+</div>
+<nav class="hidden lg:flex items-center gap-8" id="desktopNav">
+<a class="nav-link text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="#services">Services</a>
+<a class="nav-link text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="#about">About</a>
+<a class="nav-link text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="#staff">Staff</a>
+<a class="nav-link text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="#booking">Book Appointment</a>
+<a class="nav-link text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="#tips">Tips</a>
+<a class="nav-link text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="#testimonials">Reviews</a>
+<a class="nav-link text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<a class="hidden sm:flex items-center px-6 h-12 bg-error text-on-error rounded-full text-label-md font-label-md hover:opacity-90 transition-opacity uppercase tracking-wider shadow-sm" href="#emergency">Emergency Care</a>
+<button id="mobileMenuBtn" class="lg:hidden p-2 text-on-surface hover:text-primary focus:outline-none transition-colors" aria-label="Toggle Menu">
+<span class="material-symbols-outlined text-3xl" id="menuIcon">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Dropdown Menu -->
+<div id="mobileMenu" class="hidden lg:hidden bg-surface/95 backdrop-blur-xl border-t border-surface-variant px-6 py-6 space-y-4 shadow-xl transition-all duration-300">
+<a class="mobile-nav-link block text-body-lg font-medium text-on-surface hover:text-primary py-2 border-b border-surface-variant/40" href="#services">Services</a>
+<a class="mobile-nav-link block text-body-lg font-medium text-on-surface hover:text-primary py-2 border-b border-surface-variant/40" href="#about">About Us</a>
+<a class="mobile-nav-link block text-body-lg font-medium text-on-surface hover:text-primary py-2 border-b border-surface-variant/40" href="#staff">Veterinary Staff</a>
+<a class="mobile-nav-link block text-body-lg font-medium text-on-surface hover:text-primary py-2 border-b border-surface-variant/40" href="#booking">Book Appointment</a>
+<a class="mobile-nav-link block text-body-lg font-medium text-on-surface hover:text-primary py-2 border-b border-surface-variant/40" href="#tips">Pet Tips</a>
+<a class="mobile-nav-link block text-body-lg font-medium text-on-surface hover:text-primary py-2 border-b border-surface-variant/40" href="#testimonials">Reviews</a>
+<a class="mobile-nav-link block text-body-lg font-medium text-on-surface hover:text-primary py-2 border-b border-surface-variant/40" href="#contact">Contact Us</a>
+<a class="mobile-nav-link block w-full text-center py-3 bg-error text-on-error rounded-full font-label-md uppercase tracking-wider mt-4" href="#emergency">Emergency Care</a>
+</div>
+</header>
+
+<main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+
+
+<!-- Hero Section -->
+<section id="hero" class="relative w-full overflow-hidden bg-surface-variant flex items-center justify-center min-h-[80vh] px-margin-mobile lg:px-margin-desktop py-24">
+<div class="absolute inset-0 z-0 pointer-events-none opacity-30">
+<svg class="absolute top-0 right-0 w-full h-full text-primary" preserveAspectRatio="none" viewBox="0 0 100 100">
+<path d="M0,0 Q50,100 100,0 Z" fill="currentColor" opacity="0.1"></path>
+<path d="M100,100 Q50,0 0,100 Z" fill="currentColor" opacity="0.1"></path>
+</svg>
+</div>
+<div class="relative z-10 w-full max-w-container-max flex flex-col lg:flex-row items-center gap-16">
+<div class="flex-1 space-y-8 max-w-2xl text-center lg:text-left">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-surface rounded-full shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">AAHA Accredited Clinic</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface-variant">Exceptional Care,<br><span class="text-primary italic">Compassionate Healing</span>.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant/80">Experience state-of-the-art veterinary medicine delivered with an gentle touch. Your pet's well-being is our highest priority.</p>
+<div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-4">
+<a href="#booking" class="w-full sm:w-auto h-14 px-8 bg-primary text-on-primary rounded-full font-label-md text-label-md hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">Book Appointment <span class="material-symbols-outlined text-lg">calendar_month</span></a>
+<a href="#emergency" class="w-full sm:w-auto h-14 px-8 bg-surface text-primary rounded-full font-label-md text-label-md hover:bg-surface-variant transition-colors flex items-center justify-center gap-2 group shadow-sm">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">phone_in_talk</span>
+                Emergency Call
+</a>
+</div>
+</div>
+<div class="flex-1 w-full max-w-lg relative perspective-1000">
+<div class="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-transparent rounded-[2rem] blur-xl transform -rotate-3"></div>
+<img class="relative w-full aspect-[4/5] object-cover rounded-[2rem] shadow-2xl hover:rotate-2 hover:scale-[1.02] transition-transform duration-500 origin-bottom-right" data-alt="A high-quality, professional photograph of a smiling, compassionate female veterinarian in teal scrubs gently holding a fluffy Golden Retriever puppy. The setting is a clean, modern, brightly lit veterinary clinic with soft natural light streaming in. The mood is warm, safe, and reassuring." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNgXDZET8_Halv51lFz1wDfzVFRGux6_MDNt0YfSnmkrE3KdVVsrt8u1LyEdwo90A7pM2PhdYl6eYj9SkKN35PTMEx2UrOUdAAdAZFyMyleEgrMxK9SxrQZ1WJ2zM8fF0nCgv0ve_KVBCrfFIhaOQn9w-kPdEilZwRo-KQyPGVoj9HrFKAqEYUnVkgQBkQD8ivtL3tCgScM5lBb2M8OXYugbhaQPMmd9DIlRV-PlnFMQu5Bb8Cf7B7">
+<!-- Floating Badge -->
+<div class="absolute -bottom-6 -left-6 bg-surface p-6 rounded-2xl shadow-xl flex items-center gap-4 animate-bounce-slow">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary font-variation-settings-'FILL'-1">favorite</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-on-surface">15+ Years</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Trusted Experience</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Emergency Services -->
+<section id="emergency" class="w-full bg-error-container py-16 px-margin-mobile lg:px-margin-desktop">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row items-center justify-between gap-8 bg-surface rounded-3xl p-8 md:p-12 shadow-lg relative overflow-hidden">
+<div class="absolute -right-24 -top-24 w-64 h-64 bg-error/10 rounded-full blur-3xl"></div>
+<div class="flex-1 space-y-4 relative z-10 text-center md:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-error/10 rounded-full">
+<span class="material-symbols-outlined text-error text-[16px]">emergency</span>
+<span class="font-label-sm text-label-sm text-error uppercase tracking-wider">24/7 Support</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Pet Emergency?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto md:mx-0">We provide immediate critical care when seconds count. Call our emergency hotline directly for rapid triage and preparation.</p>
+</div>
+<div class="relative z-10 flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+<a href="tel:5550109911" class="h-14 px-8 bg-error text-on-error rounded-full font-headline-md text-headline-md shadow-md hover:bg-error/90 hover:scale-105 transition-all flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">call</span>
+                (555) 010-9911
+</a>
+<a href="#contact" class="h-14 px-8 bg-surface text-error rounded-full font-label-md text-label-md hover:bg-error/5 transition-colors flex items-center justify-center gap-2">
+                Directions
+                <span class="material-symbols-outlined">near_me</span>
+</a>
+</div><div class="relative z-10 mt-6 md:mt-0 md:ml-8 p-4 bg-error/5 rounded-2xl border border-error/10 max-w-xs">
+    <div class="flex items-center gap-2 mb-2 text-error">
+        <span class="material-symbols-outlined text-[18px]">info</span>
+        <span class="font-label-sm text-label-sm uppercase tracking-wider">Pet First Aid</span>
+    </div>
+    <p class="font-body-md text-body-md text-on-surface-variant">
+        If your pet is mildly unwell, encourage them to drink fresh water. Do not force liquids down their throat if they are lethargic or vomiting.
+    </p>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section id="services" class="w-full py-24 px-margin-mobile lg:px-margin-desktop bg-surface relative">
+
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="space-y-4 max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Comprehensive Care</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">From routine checkups to complex procedures, our facility is equipped to handle all your pet's health needs under one roof.</p>
+</div>
+<button class="group flex items-center gap-2 font-label-md text-label-md text-primary hover:text-primary-container transition-colors pb-2">
+                  View All Services
+                  <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Service 1 -->
+<div class="group relative bg-surface-container-lowest rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center mb-6 text-secondary group-hover:scale-110 group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 shadow-sm">
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1">monitor_heart</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 relative z-10">Wellness Exams</h3>
+<p class="font-body-md text-body-md text-on-surface-variant relative z-10">Comprehensive nose-to-tail evaluations to keep your pet thriving.</p>
+<div class="mt-8 flex items-center gap-2 font-label-sm text-label-sm text-primary opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 relative z-10">
+                      Learn More <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="group relative bg-surface-container-lowest rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center mb-6 text-secondary group-hover:scale-110 group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 shadow-sm">
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1">surgical</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 relative z-10">Advanced Surgery</h3>
+<p class="font-body-md text-body-md text-on-surface-variant relative z-10">State-of-the-art surgical suites with dedicated anesthetic monitoring.</p>
+<div class="mt-8 flex items-center gap-2 font-label-sm text-label-sm text-primary opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 relative z-10">
+                      Learn More <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="group relative bg-surface-container-lowest rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center mb-6 text-secondary group-hover:scale-110 group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 shadow-sm">
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1">dentistry</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 relative z-10">Pet Dental</h3>
+<p class="font-body-md text-body-md text-on-surface-variant relative z-10">Professional cleanings, digital dental x-rays, and extractions.</p>
+<div class="mt-8 flex items-center gap-2 font-label-sm text-label-sm text-primary opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 relative z-10">
+                      Learn More <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</div>
+<!-- Service 4 -->
+<div class="group relative bg-surface-container-lowest rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center mb-6 text-secondary group-hover:scale-110 group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 shadow-sm">
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1">content_cut</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 relative z-10">Grooming</h3>
+<p class="font-body-md text-body-md text-on-surface-variant relative z-10">Medical bathing and professional styling in a calm environment.</p>
+<div class="mt-8 flex items-center gap-2 font-label-sm text-label-sm text-primary opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 relative z-10">
+                      Learn More <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="w-full py-24 px-margin-mobile lg:px-margin-desktop bg-surface-container-low relative">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full text-primary font-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-base">info</span> About Serene Vet
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Dedicated to Excellence in Animal Health</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Founded in 2010, Serene Vet Clinic provides top-tier veterinary medical, surgical, and dental care. Our mission is to combine cutting-edge technology with warm, individualized attention for every pet.</p>
+<div class="grid grid-cols-2 gap-6 pt-4">
+<div class="bg-surface p-6 rounded-2xl shadow-sm border border-surface-variant/40">
+<h4 class="font-headline-xl text-primary text-3xl mb-1">15,000+</h4>
+<p class="font-label-sm text-on-surface-variant">Happy Pets Treated</p>
+</div>
+<div class="bg-surface p-6 rounded-2xl shadow-sm border border-surface-variant/40">
+<h4 class="font-headline-xl text-primary text-3xl mb-1">24/7</h4>
+<p class="font-label-sm text-on-surface-variant">Emergency Readiness</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl bg-surface-variant">
+<img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" alt="Veterinary team collaborating in modern facility">
+</div>
+</div>
+</div>
+</section>
+
+<!-- Staff Section -->
+<section id="staff" class="w-full py-24 px-margin-mobile lg:px-margin-desktop bg-surface">
+<div class="max-w-container-max mx-auto space-y-16">
+<div class="text-center space-y-4 max-w-2xl mx-auto">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-container rounded-full text-secondary font-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-base">groups</span> Expert Care Team
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Meet Our Veterinarians</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Our certified veterinary doctors and compassionate medical assistants are here to ensure your pet gets world-class care.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Doctor 1 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+<div class="h-72 overflow-hidden bg-surface-variant relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80" alt="Dr. Sarah Jenkins">
+</div>
+<div class="p-6 space-y-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Dr. Sarah Jenkins, DVM</h3>
+<p class="text-primary font-label-md">Medical Director & Senior Vet</p>
+<p class="text-body-md text-on-surface-variant text-sm">Specialist in internal medicine and preventive care with 12+ years of clinical experience.</p>
+</div>
+</div>
+<!-- Doctor 2 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+<div class="h-72 overflow-hidden bg-surface-variant relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" alt="Dr. Mark Rivera">
+</div>
+<div class="p-6 space-y-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Dr. Mark Rivera, DVM</h3>
+<p class="text-primary font-label-md">Surgical Specialist</p>
+<p class="text-body-md text-on-surface-variant text-sm">Expert orthopedic and soft-tissue surgeon dedicated to painless recoveries.</p>
+</div>
+</div>
+<!-- Doctor 3 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+<div class="h-72 overflow-hidden bg-surface-variant relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://images.unsplash.com/photo-1594824813566-7885a3964478?auto=format&fit=crop&w=600&q=80" alt="Dr. Emily Chen">
+</div>
+<div class="p-6 space-y-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Dr. Emily Chen, DVM</h3>
+<p class="text-primary font-label-md">Dental & Diagnostics Lead</p>
+<p class="text-body-md text-on-surface-variant text-sm">Passionate about feline wellness, dental surgery, and advanced ultrasound diagnostic imaging.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Interactive Booking Widget -->
+<section id="booking" class="w-full bg-surface-container py-24 px-margin-mobile lg:px-margin-desktop relative overflow-hidden">
+
+<div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 transform origin-top-right"></div>
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
+<div class="space-y-8 flex flex-col justify-center">
+<div class="space-y-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Schedule a Visit</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">We've made booking simple. Select your preferred time and let us know how we can help your furry friend.</p>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex items-start gap-4 p-4 rounded-xl hover:bg-surface-container-highest transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface flex items-center justify-center shadow-sm shrink-0">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Flexible Hours</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Early drop-offs and late pick-ups available for busy schedules.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-xl hover:bg-surface-container-highest transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface flex items-center justify-center shadow-sm shrink-0">
+<span class="material-symbols-outlined text-primary">pets</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">New Patients Welcome</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Enjoy 50% off your first comprehensive wellness exam.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Booking Form Card -->
+<div class="bg-surface rounded-3xl p-8 shadow-xl relative">
+<div class="absolute -top-6 -right-6 w-24 h-24 bg-tertiary-container rounded-full blur-2xl opacity-20 pointer-events-none"></div>
+<form class="space-y-6 relative z-10" id="bookingForm">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Your Name</label>
+<input class="w-full h-12 px-4 rounded-xl bg-surface-container-low focus:bg-surface border-2 border-transparent focus:border-primary outline-none transition-all font-body-md text-on-surface" placeholder="Jane Doe" type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Pet's Name</label>
+<input class="w-full h-12 px-4 rounded-xl bg-surface-container-low focus:bg-surface border-2 border-transparent focus:border-primary outline-none transition-all font-body-md text-on-surface" placeholder="Buddy" type="text">
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Reason for Visit</label>
+<select class="w-full h-12 px-4 rounded-xl bg-surface-container-low focus:bg-surface border-2 border-transparent focus:border-primary outline-none transition-all font-body-md text-on-surface appearance-none cursor-pointer">
+<option>Wellness Checkup</option>
+<option>Vaccinations</option>
+<option>Illness/Injury</option>
+<option>Dental Evaluation</option>
+</select>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Preferred Date</label>
+<input class="w-full h-12 px-4 rounded-xl bg-surface-container-low focus:bg-surface border-2 border-transparent focus:border-primary outline-none transition-all font-body-md text-on-surface" type="date">
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Preferred Time</label>
+<select class="w-full h-12 px-4 rounded-xl bg-surface-container-low focus:bg-surface border-2 border-transparent focus:border-primary outline-none transition-all font-body-md text-on-surface appearance-none cursor-pointer">
+<option>Morning (8AM - 12PM)</option>
+<option>Afternoon (12PM - 4PM)</option>
+<option>Evening (4PM - 7PM)</option>
+</select>
+</div>
+</div>
+<button class="w-full h-14 bg-primary text-on-primary rounded-xl font-label-md text-label-md shadow-md hover:bg-primary-container hover:shadow-lg transition-all transform active:scale-[0.98] mt-4 flex items-center justify-center gap-2" type="button">Book Appointment <span class="material-symbols-outlined text-[18px]">send</span></button>
+</form>
+</div>
+</div>
+</section>
+<!-- Pet Care Tips / Blog -->
+<section id="tips" class="w-full py-24 px-margin-mobile lg:px-margin-desktop bg-surface">
+<div class="max-w-container-max mx-auto">
+<div class="text-center space-y-4 mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Pet Care Wisdom</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Expert advice and practical tips to help your furry companions live their best, healthiest lives.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Article Card 1 -->
+<article class="group flex flex-col bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A macro shot of a shiny, clean dog bowl filled with fresh kibble, resting on a modern kitchen floor. Soft natural lighting highlights the texture of the food. Warm and domestic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl_M2IzUkMhz3x7ZmL9srSFcMIPtWmsu1Xqh7SQYzPX74dTRUQY6XsCNyDVcQ1p8fh7SjsRP7Yg4uOEgPJ7I3cfS2S8MYM0AvquShEO-_X--Takc_1FyaLLIgB8LXECKnd3Gj9JYXclsA0BeATaWbKSxC6K_pZqfz983gW3mbL-2nEX1hGCkW_i5CY679u_VsrdqUGlcyPLLlGWQKCw_CxZU_J9woktNGBizS6x5f4fnzQR9Kimpfy">
+<div class="absolute top-4 left-4 px-3 py-1 bg-surface/90 backdrop-blur-sm rounded-full font-label-sm text-label-sm text-primary">Nutrition</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors line-clamp-2">The Ultimate Guide to Senior Pet Nutrition</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3 flex-1">As your pet ages, their dietary needs shift dramatically. Learn how to adjust their meals for optimal joint health and vitality.</p>
+<div class="flex items-center justify-between text-on-surface-variant pt-4 border-t border-surface-variant/50">
+<span class="font-label-sm text-label-sm">5 min read</span>
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Article Card 2 -->
+<article class="group flex flex-col bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A close up of a small, fluffy kitten playfully batting at a toy feather wand held by an unseen person. The background is a slightly blurred, cozy living room. Bright, playful lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqNK6tBYtNyHjhlkWZjsyPfFQcfY0nn0F83_JMn5dgJYgV2YGjg8tSWF5UlFXvsXFpoAw8qcnq2Ic9NRM5l2t9BsdBsL5hZ5vp5waZNa-zEN5mI955lUjrhTj5-W71VMFXpkbbZg4nroga46PMGNaKPVcr_mg8Epf5Vdj2uJQiINwU8s484WGYBV1obkNMrYX6l-21WyEK4IY2K8n4tSqMMeusQ0pB4lI6wUuYd_-uLA9HeAm7-iuj">
+<div class="absolute top-4 left-4 px-3 py-1 bg-surface/90 backdrop-blur-sm rounded-full font-label-sm text-label-sm text-primary">Behavior</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors line-clamp-2">Decoding Your Cat's Body Language</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3 flex-1">Is that tail flick a sign of annoyance or playfulness? Understand what your feline friend is really trying to tell you.</p>
+<div class="flex items-center justify-between text-on-surface-variant pt-4 border-t border-surface-variant/50">
+<span class="font-label-sm text-label-sm">4 min read</span>
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Article Card 3 -->
+<article class="group flex flex-col bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A scenic shot of a person and a golden retriever walking on a lush green trail during golden hour. The dog is looking back happily at the owner. Cinematic, uplifting lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7pZ31IsxnwfqQfYy80k0SGLHnSrZ8tFfFHxNWtLwdEfTPy0dXjwoZ3B9D-4AkXROH4_TpYsEfF0CUhhAJCTw9YK89gNwSqHf0h2PaWWUrY2de4zMbMn5eQU7pdkfg46sd-FHht7o4WMldhsLnFS2X2hZnbB3CqBvS3yTuqqXL3pTNCZO6tBlgZJNwzcXjBjUKJIGOMXIcvO_jEJrqWMRHHlniN8yWO5SbK8HLizgFAcfP1rdwq_Gp">
+<div class="absolute top-4 left-4 px-3 py-1 bg-surface/90 backdrop-blur-sm rounded-full font-label-sm text-label-sm text-primary">Preventative</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors line-clamp-2">Spring Flea &amp; Tick Prevention Guide</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3 flex-1">Warm weather brings pests. Stay ahead of the curve with our comprehensive checklist for parasite prevention.</p>
+<div class="flex items-center justify-between text-on-surface-variant pt-4 border-t border-surface-variant/50">
+<span class="font-label-sm text-label-sm">3 min read</span>
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all">arrow_forward</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section id="testimonials" class="w-full bg-surface-variant/30 py-24 px-margin-mobile lg:px-margin-desktop relative overflow-hidden">
+<!-- Decorative background blur -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-surface-variant rounded-full blur-[100px] opacity-50 z-0 pointer-events-none"></div>
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Happy Tails &amp; Clients</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-surface rounded-2xl p-8 shadow-sm flex flex-col gap-6 hover:-translate-y-1 transition-transform">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1 text-[20px]">star</span>
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1 text-[20px]">star</span>
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1 text-[20px]">star</span>
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1 text-[20px]">star</span>
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1 text-[20px]">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic flex-1">"The staff at Serene Vet saved my Beagle's life. Their quick response during an emergency surgery was incredible. They truly care about the animals."</p>
+<div class="flex items-center gap-4 pt-4 border-t border-surface-variant/30">
+<div class="w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-headline-md text-[18px]">M</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Michael R.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Owner of Buster</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface rounded-2xl p-8 shadow-sm flex flex-col gap-6 hover:-translate-y-1 transition-transform">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1 text-[20px]">star</span>
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1 text-[20px]">star</span>
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1 text-[20px]">star</span>
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1 text-[20px]">star</span>
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1 text-[20px]">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic flex-1">"I've been bringing my cats here for years. The facility is spotless, the vets are highly knowledgeable, and the front desk staff makes every visit a breeze."</p>
+<div class="flex items-center gap-4 pt-4 border-t border-surface-variant/30">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-secondary flex items-center justify-center font-headline-md text-[18px]">S</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Sarah J.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Owner of Luna &amp; Milo</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface rounded-2xl p-8 shadow-sm flex flex-col gap-6 hover:-translate-y-1 transition-transform lg:block md:hidden">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1 text-[20px]">star</span>
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1 text-[20px]">star</span>
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1 text-[20px]">star</span>
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1 text-[20px]">star</span>
+<span class="material-symbols-outlined text-[20px]">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic flex-1">"Excellent grooming services! My Poodle has anxiety, but their groomers are so patient and gentle. He always comes out looking fantastic."</p>
+<div class="flex items-center gap-4 pt-4 border-t border-surface-variant/30">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md text-[18px]">D</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">David C.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Owner of Charlie</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<footer id="contact" class="w-full bg-surface-container-high py-16 mt-16"><div class="max-w-container-max mx-auto px-margin-mobile lg:px-margin-desktop"><div class="grid grid-cols-1 md:grid-cols-3 gap-12"><div class="space-y-4"><div class="flex items-center gap-2"><img alt="Serene Vet Logo" class="h-6 w-auto grayscale opacity-70" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM6V1jfcPDtaan1bDIB2XOusdB8V34ErWlEWC6w09yiOX6ZfCiqvWOZrkonafNAAVXuDeb7vOSbPzU75EnGO2Z9WNHUiiWnVUfJwmgzWOm3V7UIrTMPVBjwpn4PjxU3fop8UGZvDTb3BDKFysVFTHtWjKZn_LqFy8ITrR6koI377qULIxMNG7SNtx3O6zPrWxok1NovFxSb6BMo1aSXCpYg08X36trDF3xXxwxBDLu2RlWyqEAQdAn"><span class="font-headline-md text-headline-md text-on-surface">Serene Vet</span></div><p class="text-body-md text-on-surface-variant max-w-xs">Providing compassionate, high-end veterinary care for your beloved companions since 2010.</p></div><div class="space-y-4"><h4 class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Clinic Hours</h4><ul class="space-y-2 text-body-md text-on-surface"><li class="flex justify-between"><span class="">Mon - Fri</span><span class="">8:00 AM - 7:00 PM</span></li><li class="flex justify-between"><span class="">Saturday</span><span class="">9:00 AM - 4:00 PM</span></li><li class="flex justify-between text-error font-medium"><span class="">Sunday</span><span class="">Emergency Only</span></li></ul></div><div class="space-y-4"><h4 class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Contact &amp; Social</h4><p class="text-body-md text-on-surface">123 Healing Path, Petaluma, CA<br>T: (555) 010-9988<br>E: care@serenevet.com</p><div class="flex gap-4 pt-2"><a class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all shadow-sm" href="#"><span class="material-symbols-outlined">share</span></a><a class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all shadow-sm" href="#"><span class="material-symbols-outlined">thumb_up</span></a><a class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-all shadow-sm" href="#"><span class="material-symbols-outlined">camera</span></a></div></div></div><div class="border-t border-outline-variant mt-12 pt-8 text-center text-label-sm font-label-sm text-on-surface-variant">© 2024 Serene Vet Clinic. All rights reserved. Professional Care for Happy Tails.</div></div></footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Booking Form Interaction
+    const form = document.getElementById('bookingForm');
+    if (form) {
+      const submitBtn = form.querySelector('button[type="button"]');
+      if (submitBtn) {
+        submitBtn.addEventListener('click', () => {
+          const originalText = submitBtn.innerHTML;
+          submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Processing...';
+          submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
+          
+          setTimeout(() => {
+            submitBtn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Request Sent!';
+            submitBtn.classList.remove('bg-primary', 'hover:bg-primary-container');
+            submitBtn.classList.add('bg-[#146c2e]', 'hover:bg-[#146c2e]');
+            
+            setTimeout(() => {
+              submitBtn.innerHTML = originalText;
+              submitBtn.classList.remove('opacity-80', 'cursor-not-allowed', 'bg-[#146c2e]', 'hover:bg-[#146c2e]');
+              submitBtn.classList.add('bg-primary', 'hover:bg-primary-container');
+              form.reset();
+            }, 3000);
+          }, 1500);
+        });
+      }
+    }
+
+    // 2. Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+          if (menuIcon) menuIcon.textContent = 'close';
+        } else {
+          mobileMenu.classList.add('hidden');
+          if (menuIcon) menuIcon.textContent = 'menu';
+        }
+      });
+
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          if (menuIcon) menuIcon.textContent = 'menu';
+        });
+      });
+    }
+
+    // 3. Active Section Detection on Scroll for Navigation Links
+    const sections = Array.from(document.querySelectorAll('section[id], footer[id]'));
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+
+    const updateActiveSection = () => {
+      const scrollY = window.scrollY;
+      let currentSectionId = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 140;
+        const sectionHeight = section.offsetHeight;
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      if (!currentSectionId && sections.length > 0) {
+        currentSectionId = sections[0].getAttribute('id');
+      }
+
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === `#${currentSectionId}`) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', updateActiveSection);
+    updateActiveSection();
+  });
+</script>
+</body></html>
