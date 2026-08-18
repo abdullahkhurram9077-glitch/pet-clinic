@@ -11,7 +11,7 @@ while ($listener.IsListening) {
         
         $localPath = $request.Url.LocalPath
         if ($localPath -eq "/" -or [string]::IsNullOrWhiteSpace($localPath)) {
-            $localPath = "/code.html"
+            $localPath = "/index.html"
         }
         
         $relativeFile = $localPath.TrimStart('/').Replace('/', '\')
